@@ -1,6 +1,32 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let sum = 0
+  let sumArray = []
+
+  for (let n = 0; n < array.length; n++) {
+    let mainNumber = array[n]
+    let boolean = true
+    array.forEach(element => {
+      if (mainNumber !== element) {
+        sum = mainNumber + element
+        sumArray.push(sum)
+      }
+      else {
+        sum = 0
+      }
+
+
+    });
+
+  }
+  return sumArray.includes(target)
 }
+
+
+
+hasTargetSum([3, 8, 12, 4, 11, 7], 10)
+
+
 
 /* 
   Write the Big O time complexity of your function here
